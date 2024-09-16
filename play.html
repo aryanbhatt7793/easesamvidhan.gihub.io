@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Part V: The Union</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Preload Pages for Faster Load -->
+    <link rel="preload" href="quiz.html" as="document">
+    <link rel="preload" href="hangman.html" as="document">
+    <link rel="preload" href="samrat.html" as="document">
+    <link rel="preload" href="puzzle.html" as="document">
+
+    <style>
+        /* Reset basic elements */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            height: 100%;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Background image */
+        body {
+            background-image: url('court.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Content box */
+        .content {
+            width: 700px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        /* Options */
+        .option-button {
+            background-color: #1e88e5;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            width: 80%;
+            max-width: 400px;
+            margin: 15px auto;
+            border: none;
+            font-size: 18px;
+        }
+
+        .option-button:hover {
+            background-color: #1565c0;
+        }
+
+        /* Back arrow */
+        .arrow-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .arrow-button {
+            font-size: 4em;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            width: 35px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hamburger-menu div {
+            background-color: white;
+            height: 4px;
+            width: 100%;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .option-button {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back Arrow -->
+    <div class="arrow-buttons">
+        <a href="game.html" class="arrow-button">
+            &#8592;
+        </a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="content">
+            <h1>The Constitutional Saga</h1>
+
+            <button class="option-button" onclick="location.href='quiz.html'">Constitutional Quiz</button>
+            <button class="option-button" onclick="location.href='guess.html'">Guess the Name</button>
+            <button class="option-button" onclick="location.href='samrat.html'">Samvidhan Samrat</button>
+            <button class="option-button" onclick="location.href='puzzle.html'">Constitutional Conundrum: The Puzzle Quest</button>
+
+        </div>
+    </div>
+
+   
+
+    <script>
+        // Hamburger Menu Toggle
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

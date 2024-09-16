@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ease Samvidhan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset some basic elements */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Background video */
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        /* Landing page container */
+        .landing-page {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            text-align: center;
+        }
+
+        /* Content container */
+        .content {
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+
+        /* Logo styling */
+        .logo img {
+            width: 150px;
+            height: 150px; /* Ensure the height matches the width */
+            margin-bottom: 20px;
+            border-radius: 50%; /* Make the image circular */
+            object-fit: cover; /* Ensure the image covers the circle area */
+        }
+
+        /* Heading and paragraph */
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        /* Button styling */
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            margin: 10px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .start-btn {
+            background-color: #007bff;
+        }
+
+        .learn-btn {
+            background-color: #28a745;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+
+        .hamburger-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            width: 35px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hamburger-menu div {
+            background-color: white;
+            height: 4px;
+            width: 100%;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-page">
+        <video autoplay muted loop id="bg-video">
+            <source src="justice.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="content">
+            <div class="logo">
+                <img src="logo.png" alt="Ease Samvidhan Logo">
+            </div>
+            <h1>Welcome to Ease Samvidhan</h1>
+            <p>Explore the Constitution of India through an engaging and educational journey!</p>
+
+            <div class="buttons">
+                <a href="game.html" class="btn start-btn">Start Game</a>
+            </div>
+        </div>
+
+        <audio autoplay loop>
+            <source src="background-music.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+   
+
+    <script>
+        // Internal JavaScript for hamburger menu toggle
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

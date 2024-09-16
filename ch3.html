@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter I: The Executive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset basic elements */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            height: 100%;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Background image */
+        body {
+            background-image: url('court.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Comic page flip container */
+        .comic-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            perspective: 1000px;
+        }
+
+        /* Comic page */
+        .page {
+            width: 70%;
+            height: 80%;
+            background-color: white;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            z-index: 1;
+        }
+
+        /* Flipping effect */
+        .flip {
+            transform: rotateY(-180deg);
+        }
+
+        /* Front and back of the page */
+        .page .front, .page .back, .page .side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Front page content */
+        .front {
+            background-image: url('3.1.png'); /* Page 1 image */
+        }
+
+        /* Back page content */
+        .back {
+            transform: rotateY(180deg);
+            background-image: url('3.2.png'); /* Page 2 image */
+        }
+
+        
+
+        /* Navigation arrow buttons container */
+        .arrow-buttons {
+            position: fixed;
+            bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% - 40px); /* Adjust width to accommodate both arrows with spacing */
+            left: 20px;
+            z-index: 10; /* Ensure arrows are above all other elements */
+        }
+
+        /* Backward arrow button */
+        .arrow-button.backward-button {
+            font-size: 4em;
+            color: white;
+            text-decoration: none;
+            margin-right: auto; /* Pushes the backward button to the left */
+        }
+
+        /* Forward arrow button */
+        .arrow-button.forward-button {
+            font-size: 4em;
+            color: white;
+            text-decoration: none;
+            margin-left: auto; /* Pushes the forward button to the far right */
+        }
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            width: 35px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 10; /* Ensure the hamburger menu is on top */
+        }
+
+        .hamburger-menu div {
+            background-color: white;
+            height: 4px;
+            width: 100%;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .page {
+                width: 90%;
+                height: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation arrows -->
+    <div class="arrow-buttons">
+        <a href="ch2.html" class="arrow-button backward-button">&#8592;</a>
+        <a href="ch4.html" class="arrow-button forward-button">&#8594;</a>
+    </div>
+
+    <!-- Comic Container -->
+    <div class="comic-container">
+        <div class="page" id="page">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="side"></div> <!-- Additional page -->
+        </div>
+    </div>
+
+  
+    <script>
+        // Page flip functionality
+        const page = document.getElementById('page');
+        let currentPage = 0;
+        const pages = ['front', 'back', 'side'];
+
+        page.addEventListener('click', () => {
+            currentPage = (currentPage + 1) % pages.length;
+            page.classList.toggle('flip', currentPage % 2 === 1);
+            page.style.transform = `rotateY(${currentPage * -180}deg)`;
+        });
+
+        // Hamburger Menu Toggle
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ease Samvidhan - Ready</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and common styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Background image styling (same as name.html) */
+        body {
+            background-image: url('court.jpeg'); /* Same background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Flexbox layout to center content */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Content box styling (same as name.html) */
+        .content {
+            width: 700px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Avatar container (same as name.html) */
+        .avatar-container {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+        }
+
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Greeting text styling */
+        .greeting-text {
+            font-size: 2.5em;
+            color: white;
+        }
+
+        /* Paragraph */
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        /* Navigation arrow buttons container */
+        .arrow-buttons {
+            position: fixed;
+            bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% - 40px); /* Adjust width to accommodate both arrows with spacing */
+            left: 20px;
+        }
+
+        /* Backward arrow button */
+        .arrow-button.backward-button {
+            font-size: 4em;
+            color: white;
+            text-decoration: none;
+            margin-right: auto; /* Pushes the backward button to the left */
+        }
+
+        /* Forward arrow button */
+        .arrow-button.forward-button {
+            font-size: 4em;
+            color: white;
+            text-decoration: none;
+            margin-left: auto; /* Pushes the forward button to the far right */
+        }
+
+        /* Hamburger menu styling */
+        .hamburger-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            width: 35px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hamburger-menu div {
+            background-color: white;
+            height: 4px;
+            width: 100%;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .greeting-text {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .arrow-button {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            <!-- Avatar container -->
+            <div class="avatar-container">
+                <img src="avatar.png" alt="Avatar">
+            </div>
+
+            <!-- Greeting text -->
+            <h1 class="greeting-text" id="greeting-text"></h1>
+            <p>Bored with books? Let's understand the Constitution in an interactive and simple way.</p>
+        </div>
+
+        <!-- Navigation arrows -->
+        <div class="arrow-buttons">
+            <a href="name.html" class="arrow-button backward-button">&#8592;</a>
+            <a href="game.html" class="arrow-button forward-button">&#8594;</a>
+        </div>
+
+       
+    <script>
+        // Retrieve the user's name from local storage and display it in the greeting text
+        const userName = localStorage.getItem('userName');
+        const greetingText = document.getElementById('greeting-text');
+        greetingText.textContent = `Hi, ${userName}!`; // Customize the text with user's name
+
+        // JavaScript for hamburger menu toggle
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

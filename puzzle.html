@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constitutional Conundrum: The Puzzle Quest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+
+
+
+
+ /* Back arrow */
+ .arrow-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .arrow-button {
+            font-size: 4em;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            width: 35px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hamburger-menu div {
+            background-color: white;
+            height: 4px;
+            width: 100%;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        /* Basic reset and fonts */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            height: 100%;
+            background-image: url('court.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 90%;
+            padding: 20px;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Heading */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #1e88e5; /* Blue color for the heading */
+            text-align: center;
+        }
+
+        /* Timer */
+        .timer {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #d32f2f; /* Red color for the timer */
+        }
+
+        /* Crossword Grid */
+        .crossword-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 30px); /* Cell size */
+            grid-gap: 1px; /* Gap between cells */
+            margin: 20px 0;
+            max-width: 320px; /* Adjust to fit screen */
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Grid cells */
+        .crossword-grid input {
+            width: 30px; /* Cell size */
+            height: 30px; /* Cell size */
+            text-align: center;
+            font-size: 14px; /* Font size */
+            border: 1px solid #ddd;
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Clue section */
+        .clues {
+            max-width: 100%; /* Fit to screen */
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        /* Clue headers */
+        .clues h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #1e88e5; /* Blue color for the headers */
+        }
+
+        /* Clue paragraphs */
+        .clues p {
+            margin: 5px 0;
+            font-size: 16px; /* Font size for clues */
+        }
+
+        /* Submit button */
+        .submit-btn {
+            background-color: #1e88e5;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .submit-btn:hover {
+            background-color: #1565c0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .crossword-grid {
+                grid-template-columns: repeat(10, 25px); /* Further decrease for small screens */
+                max-width: 280px;
+            }
+
+            .crossword-grid input {
+                width: 25px; /* Further decrease for small screens */
+                height: 25px;
+                font-size: 12px;
+            }
+
+            .timer {
+                font-size: 16px;
+            }
+
+            .submit-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!-- Back Arrow -->
+     <div class="arrow-buttons">
+        <a href="play.html" class="arrow-button">
+            &#8592;
+        </a>
+    </div>
+
+    <div class="container">
+        <h1>Constitutional Conundrum: The Puzzle Quest</h1>
+        <div class="timer">Time Left: <span id="timer">02:00</span></div>
+
+        <!-- Crossword Grid -->
+        <div class="crossword-grid">
+            <!-- Example 10x10 grid -->
+            <!-- Row 1 -->
+            <input type="text" maxlength="1" data-answer="P">
+            <input type="text" maxlength="1" data-answer="A">
+            <input type="text" maxlength="1" data-answer="R">
+            <input type="text" maxlength="1" data-answer="L">
+            <input type="text" maxlength="1" data-answer="I">
+            <input type="text" maxlength="1" data-answer="A">
+            <input type="text" maxlength="1" data-answer="M">
+            <input type="text" maxlength="1" data-answer="E">
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" disabled>
+            <!-- Row 2 -->
+            <input type="text" maxlength="1" data-answer="S">
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" data-answer="U">
+            <input type="text" maxlength="1" data-answer="P">
+            <input type="text" maxlength="1" data-answer="R">
+            <input type="text" maxlength="1" data-answer="E">
+            <input type="text" maxlength="1" data-answer="M">
+            <!-- Row 3 -->
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" data-answer="A">
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" data-answer="I">
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" data-answer="N">
+            <!-- Row 4 -->
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" data-answer="D">
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" data-answer="S">
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" data-answer="T">
+            <!-- Row 5 -->
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" disabled>
+            <input type="text" maxlength="1" data-answer="P">
+            <input type="text" maxlength="1" data-answer="R">
+            <input type="text" maxlength="1" data-answer="I">
+            <input type="text" maxlength="1" data-answer="M">
+            <input type="text" maxlength="1" data-answer="E">
+            <input type="text" maxlength="1" data-answer="M">
+            <input type="text" maxlength="1" data-answer="I">
+            <input type="text" maxlength="1" data-answer="N">
+        </div>
+
+        <!-- Clues Section -->
+        <div class="clues">
+            <h3>Across</h3>
+            <p>1. The central government body responsible for law-making at the national level (9)</p>
+            <p>5. The highest authority in the Union's judiciary (5)</p>
+            <p>6. The body responsible for the Union's budget (9)</p>
+
+            <h3>Down</h3>
+            <p>1. The President of India is the ___ of the Union (8)</p>
+            <p>2. The Union territory known for its significant Buddhist sites (5)</p>
+            <p>3. The Union's head of the executive branch (7)</p>
+            <p>4. The Union territory with the highest population density (6)</p>
+            <p>5. The official language recognized by the Union (5)</p>
+        </div>
+
+        <!-- Submit Button -->
+        <button class="submit-btn" onclick="submitAnswers()">Submit</button>
+    </div>
+
+     
+
+    
+      
+
+    <script>
+        // Timer logic
+        var timeLeft = 120; // 2 minutes
+        var timerElement = document.getElementById('timer');
+
+        function updateTimer() {
+            var minutes = Math.floor(timeLeft / 60);
+            var seconds = timeLeft % 60;
+            timerElement.textContent = 
+                (minutes < 10 ? '0' : '') + minutes + ':' + 
+                (seconds < 10 ? '0' : '') + seconds;
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert('Time is up!');
+                // Optionally, disable the crossword grid here
+            } else {
+                timeLeft--;
+            }
+        }
+
+        var timerInterval = setInterval(updateTimer, 1000);
+
+        // Function to handle submit button click
+        function submitAnswers() {
+            var inputs = document.querySelectorAll('.crossword-grid input');
+            var correct = true;
+
+            inputs.forEach(input => {
+                if (input.dataset.answer && input.value.toUpperCase() !== input.dataset.answer) {
+                    correct = false;
+                    input.style.backgroundColor = '#f8d7da'; // Red background for wrong answers
+                } else {
+                    input.style.backgroundColor = '#d4edda'; // Green background for correct answers
+                }
+            });
+
+            if (correct) {
+                alert('Congratulations! All answers are correct.');
+            } else {
+                alert('Some answers are incorrect. Please check and try again.');
+            }
+        }
+
+
+          // Hamburger Menu Toggle
+          function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium Level Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="easy.css">
+</head>
+<body>
+
+    <!-- Back Arrow -->
+    <div class="arrow-buttons">
+        <a href="quiz.html" class="arrow-button">
+            &#8592;
+        </a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="content">
+            <h1>Medium Level</h1>
+
+            <!-- Lives display -->
+            <div class="lives">
+                <span id="heart1" class="heart">&#10084;</span>
+                <span id="heart2" class="heart">&#10084;</span>
+            </div>
+
+            <!-- Quiz Questions -->
+            <div id="quiz">
+                <!-- Question 1 -->
+                <div class="question">1) According to Article 52-53, who exercises executive powers in India?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) The Chief Justice</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) The Prime Minister alone</div>
+                <div class="option" onclick="checkAnswer(this, true)">C) The President directly or through subordinate officers</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) The Vice-President</div>
+
+                <!-- Question 2 -->
+                <div class="question">2) Which article specifies that the President of India can be impeached?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Article 52</div>
+                <div class="option" onclick="checkAnswer(this, true)">B) Article 61</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) Article 74</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Article 123</div>
+
+                <!-- Question 3 -->
+                <div class="question">3) Who elects the President of India?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) The Lok Sabha alone</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) The Rajya Sabha alone</div>
+                <div class="option" onclick="checkAnswer(this, true)">C) An electoral college comprising elected members of both Houses of Parliament and State Legislative Assemblies</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) The President’s Council of Ministers</div>
+
+                <!-- Question 4 -->
+                <div class="question">4) What is the primary role of the Vice-President of India as described in Article 63-64?</div>
+                <div class="option" onclick="checkAnswer(this, true)">A) To be the ex-officio Chairman of the Rajya Sabha</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) To appoint the Chief Justice of India</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) To represent India in international negotiations</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) To act as the Speaker of the Lok Sabha</div>
+
+                <!-- Question 5 -->
+                <div class="question">5) Which article details the appointment of the Prime Minister by the President?</div>
+                <div class="option" onclick="checkAnswer(this, true)">A) Article 74</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) Article 76</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) Article 83</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Article 110</div>
+
+                <!-- Question 6 -->
+                <div class="question">6) What is the term duration of a member of the Rajya Sabha?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Four years</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) Five years</div>
+                <div class="option" onclick="checkAnswer(this, true)">C) Six years</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Seven years</div>
+
+                <!-- Question 7 -->
+                <div class="question">7) Under which article does the President have the power to issue ordinances?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Article 79</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) Article 110</div>
+                <div class="option" onclick="checkAnswer(this, true)">C) Article 123</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Article 137</div>
+
+                <!-- Question 8 -->
+                <div class="question">8) Which article gives the Supreme Court the power to review its own judgments?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Article 124</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) Article 129</div>
+                <div class="option" onclick="checkAnswer(this, true)">C) Article 137</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Article 143</div>
+
+                <!-- Question 9 -->
+                <div class="question">9) What role does the Chief Justice play according to Article 126-127?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Appoints the Prime Minister</div>
+                <div class="option" onclick="checkAnswer(this, true)">B) Appoints acting and ad hoc judges when necessary</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) Represents India in international courts</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Advises the President on legal matters</div>
+
+                <!-- Question 10 -->
+                <div class="question">10) Who is responsible for auditing the accounts of the Union and States according to Article 148?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) The Chief Justice</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) The Prime Minister</div>
+                <div class="option" onclick="checkAnswer(this, true)">C) The Comptroller and Auditor-General</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) The Finance Minister</div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Popup -->
+    <div id="popup">
+        <button onclick="closePopup('play.html')">Ok</button>
+    </div>
+
+    <script src="medium.js"></script>
+</body>
+</html>

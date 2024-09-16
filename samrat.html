@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBC Constitution Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="samrat.css">
+   
+</head>
+<body>
+
+
+
+
+    <!-- Back Arrow -->
+    <div class="arrow-buttons">
+        <a href="play.html" class="arrow-button">
+            &#8592;
+        </a>
+    </div>
+    
+
+    <!-- Main Quiz Container -->
+    <div class="container">
+        <div class="quiz-box">
+            <div class="question" id="question">
+                <!-- Dynamic question will be inserted here -->
+            </div>
+
+            <div class="option" onclick="checkAnswer(0)" id="option0"></div>
+            <div class="option" onclick="checkAnswer(1)" id="option1"></div>
+            <div class="option" onclick="checkAnswer(2)" id="option2"></div>
+            <div class="option" onclick="checkAnswer(3)" id="option3"></div>
+
+            <div class="lifeline-buttons">
+                <button class="lifeline" id="lifeline-fiftyFifty" onclick="useLifeline('fiftyFifty')">50-50</button>
+                <button class="lifeline" id="lifeline-audiencePoll" onclick="useLifeline('audiencePoll')">Audience Poll</button>
+                <button class="lifeline" id="lifeline-expertPoll" onclick="useLifeline('expertPoll')">Expert Poll</button>
+                <button class="lifeline" id="lifeline-best3" onclick="useLifeline('best3')">Best 3</button>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <!-- Popup for showing messages -->
+    <div class="popup" id="popup">
+        <p id="popup-message"></p>
+    </div>
+    <script>
+        // Hamburger Menu Toggle
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+    <script src="samrat.js"></script>
+</body>
+</html>

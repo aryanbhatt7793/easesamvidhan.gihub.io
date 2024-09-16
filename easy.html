@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Level Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="easy.css">
+</head>
+<body>
+
+    <!-- Back Arrow -->
+    <div class="arrow-buttons">
+        <a href="quiz.html" class="arrow-button">
+            &#8592;
+        </a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="content">
+            <h1>Easy Level</h1>
+
+            <!-- Lives display -->
+            <div class="lives">
+                <span id="heart1" class="heart">&#10084;</span>
+                <span id="heart2" class="heart">&#10084;</span>
+            </div>
+
+            <!-- Quiz Questions -->
+            <div id="quiz">
+                <!-- Question 1 -->
+                <div class="question"> 1) Who is the head of the state in India?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Prime Minister</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) Chief Justice</div>
+                <div class="option" onclick="checkAnswer(this, true)">C) President</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Vice-President</div>
+
+                <!-- Question 2 -->
+                <div class="question">2) Which article states that the President can be impeached for violation of the Constitution?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Article 52</div>
+                <div class="option" onclick="checkAnswer(this, true)">B) Article 61</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) Article 74</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Article 123</div>
+
+                <!-- Question 3 -->
+                <div class="question">3) Who appoints the Prime Minister of India?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Chief Justice</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) Vice-President</div>
+                <div class="option" onclick="checkAnswer(this, true)">C) President</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Lok Sabha Speaker</div>
+
+                <!-- Question 4 -->
+                <div class="question">4) How is the Vice-President of India elected?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) By the Lok Sabha</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) By the Rajya Sabha</div>
+                <div class="option" onclick="checkAnswer(this, true)">C) By the Electoral College</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) By the President</div>
+
+                <!-- Question 5 -->
+                <div class="question">5) What is the term of the Lok Sabha?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Four years</div>
+                <div class="option" onclick="checkAnswer(this, true)">B) Five years</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) Six years</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Seven years</div>
+
+                <!-- Question 6 -->
+                <div class="question">6) Which body is the upper house of Parliament?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Lok Sabha</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) Legislative Assembly</div>
+                <div class="option" onclick="checkAnswer(this, true)">C) Rajya Sabha</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) State Assembly</div>
+
+                <!-- Question 7 -->
+                <div class="question">7) What is the role of the Attorney General of India?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) To audit government accounts</div>
+                <div class="option" onclick="checkAnswer(this, true)">B) To advise the government on legal matters</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) To act as the Chief Justice</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) To appoint judges to the Supreme Court</div>
+
+                <!-- Question 8 -->
+                <div class="question">8) What power does the President have during a recess of Parliament?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) To dissolve Parliament</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) To appoint judges</div>
+                <div class="option" onclick="checkAnswer(this, true)">C) To issue ordinances</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) To impeach the Prime Minister</div>
+
+                <!-- Question 9 -->
+                <div class="question">9) Which article provides for the Supreme Court’s authority to review its own judgments?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Article 123</div>
+                <div class="option" onclick="checkAnswer(this, true)">B) Article 137</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) Article 143</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Article 141</div>
+
+                <!-- Question 10 -->
+                <div class="question">10) Who presents the reports of the Comptroller and Auditor-General to Parliament?</div>
+                <div class="option" onclick="checkAnswer(this, true)">A) The President</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) The Prime Minister</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) The Chief Justice</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) The Governors</div>
+            </div>
+        </div>
+    </div>
+
+   
+    <!-- Popup -->
+    <div id="popup">
+        <button onclick="closePopup('play.html')">Ok</button>
+    </div>
+
+    <script src="easy.js"></script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Picture Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset basic elements */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            height: 100%;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Background image */
+        body {
+            background-image: url('court.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        /* Content box */
+        .content {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        /* Image */
+        .image-container {
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Text input and button */
+        .input-container {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1e88e5;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1565c0;
+        }
+
+        /* Feedback */
+        .feedback {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Popup Styling */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .popup.show {
+            display: block;
+        }
+
+        .popup button {
+            margin-top: 10px;
+            background-color: #1e88e5;
+        }
+
+        /* Arrow Buttons */
+        .arrow-buttons, .forward-arrow-buttons {
+            position: fixed;
+            bottom: 20px;
+            font-size: 2em;
+            color: white;
+            text-decoration: none;
+        }
+
+        .arrow-buttons {
+            left: 20px;
+        }
+
+        .forward-arrow-buttons {
+            right: 20px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            width: 35px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hamburger-menu div {
+            background-color: white;
+            height: 4px;
+            width: 100%;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+           /* Navigation arrow buttons container */
+           .arrow-buttons {
+            position: fixed;
+            bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% - 40px); /* Adjust width to accommodate both arrows with spacing */
+            left: 20px;
+            z-index: 10; /* Ensure arrows are above all other elements */
+        }
+
+        /* Backward arrow button */
+        .arrow-button.backward-button {
+            font-size: 2em;
+            color: white;
+            text-decoration: none;
+            margin-right: auto; /* Pushes the backward button to the left */
+        }
+
+        /* Forward arrow button */
+        .arrow-button.forward-button {
+            font-size: 2em;
+            color: white;
+            text-decoration: none;
+            margin-left: auto; /* Pushes the forward button to the far right */
+        }
+    </style>
+</head>
+<body>
+
+   <!-- Navigation arrows -->
+   <div class="arrow-buttons">
+    <a href="play.html" class="arrow-button backward-button">&#8592;</a>
+    <a href="learn.html" class="arrow-button forward-button">&#8594;</a>
+</div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="content">
+            <!-- Image Box -->
+            <div class="image-container">
+                <img id="image" src="picture1.jpg" alt="Image">
+            </div>
+
+            <!-- Text Input and Button -->
+            <div class="input-container">
+                <input type="text" id="answer" placeholder="Enter your answer">
+                <button onclick="checkAnswer()">Submit</button>
+            </div>
+
+            <!-- Feedback -->
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <p id="popup-message"></p>
+        <button onclick="closePopup()">OK</button>
+    </div>
+
+   
+
+    <script>
+        const questions = [
+            { src: 'picture1.jpg', answer: 'draupadi murmu', description: 'The President is the ceremonial head of the Indian Union, responsible for appointing the Prime Minister and other key officials.' },
+            { src: 'picture2.jpg', answer: 'narendra modi', description: 'The Prime Minister is the head of the government and is responsible for running the country and executing policies.' },
+            { src: 'picture3.jpg', answer: 'lok sabha', description: 'The Lok Sabha is the lower house of Parliament where members are elected by the people.' },
+            { src: 'picture4.jpg', answer: 'rajya sabha', description: 'The Rajya Sabha is the upper house of Parliament, representing the states and union territories.' },
+            { src: 'picture5.jpg', answer: 'election commission of India', description: 'The Election Commission is responsible for administering elections and ensuring they are conducted fairly.' },
+            { src: 'picture6.jpg', answer: 'supreme court of India', description: 'The Supreme Court is the highest judicial authority in India, ensuring justice and interpreting the Constitution.' }
+        ];
+
+        let currentQuestion = 0;
+
+        function displayQuestion() {
+            const img = document.getElementById('image');
+            img.src = questions[currentQuestion].src;
+            document.getElementById('feedback').textContent = '';
+        }
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value.trim();
+            const feedback = document.getElementById('feedback');
+            const popup = document.getElementById('popup');
+            const popupMessage = document.getElementById('popup-message');
+
+            if (userAnswer.toLowerCase() === questions[currentQuestion].answer.toLowerCase()) {
+                popupMessage.textContent = 'Bravo, you are doing good!';
+                popup.classList.add('show');
+                setTimeout(() => {
+                    popup.classList.remove('show');
+                    currentQuestion = (currentQuestion + 1) % questions.length;
+                    displayQuestion();
+                }, 2000);
+            } else {
+                popupMessage.textContent = `Well tried, but this is a wrong answer. The correct answer is ${questions[currentQuestion].answer}. ${questions[currentQuestion].description}`;
+                popup.classList.add('show');
+            }
+        }
+
+        function closePopup() {
+            document.getElementById('popup').classList.remove('show');
+        }
+
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+
+        displayQuestion();
+    </script>
+</body>
+</html>

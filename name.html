@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ease Samvidhan - Name Input</title>
+    <style>
+        /* Reset and common styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Background image styling */
+        body {
+            background-image: url('court.jpeg');
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the image */
+            background-attachment: fixed; /* Keeps the image fixed during scrolling */
+        }
+
+        /* Flexbox layout to center content */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Content box styled exactly like index.html */
+        .content {
+            width: 700px; /* Set a fixed width for the rectangle */
+            padding: 2px;
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            border-radius: 10px; /* Optional: adjust as needed */
+            text-align: center;
+            box-sizing: border-box; /* Ensure padding is included in width calculation */
+        }
+
+        /* Avatar container styled like logo */
+        .avatar-container {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px; /* Centers the avatar */
+        }
+
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the avatar covers the circular area */
+            margin-top: 15px;
+        }
+
+        /* Heading (What is your name?) */
+        h1 {
+            font-size: 3em;
+            margin: 0 0 20px;
+        }
+
+        /* Input field styling */
+        .input-container {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 20px;
+            padding-left: 95px;
+        }
+
+        .input-container input {
+            width: 80%;
+            padding: 10px;
+            font-size: 1.2em;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        /* Submit button styling */
+        .submit-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+        .submit-button:hover {
+            background-color: #007bff;
+        }
+
+        /* Navigation arrow button */
+        .arrow-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .arrow-button {
+            font-size: 4em;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Hamburger menu styling */
+        .hamburger-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            width: 35px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hamburger-menu div {
+            background-color: white;
+            height: 4px;
+            width: 100%;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .submit-button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+
+            .input-container input {
+                padding: 10px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content"> <!-- This is the main content box -->
+            <div class="avatar-container"> <!-- Avatar styled like the logo -->
+                <img src="avatar.png" alt="Avatar">
+            </div>
+            <h1>What is your name?</h1>
+
+            <div class="input-container">
+                <input type="text" id="user-name" placeholder="Enter your name here">
+            </div>
+
+            <button class="submit-button" onclick="submitName()">Submit</button>
+        </div>
+
+        <div class="arrow-buttons">
+            <a href="index.html" class="arrow-button">
+                &#8592;
+            </a>
+        </div>
+
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="menu" id="menu">
+            <a href="#">Leadership Board</a>
+            <a href="#">Achievements</a>
+        </div>
+    </div>
+
+    <script>
+        // Internal JavaScript for hamburger menu toggle
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+
+        // Function to handle the submit button click
+        function submitName() {
+            var userName = document.getElementById("user-name").value;
+            if (userName) {
+                localStorage.setItem("userName", userName);
+                window.location.href = "ready.html";
+            } else {
+                alert("Please enter your name.");
+            }
+        }
+    </script>
+</body>
+</html>

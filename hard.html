@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hard Level Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="easy.css">
+</head>
+<body>
+
+    <!-- Back Arrow -->
+    <div class="arrow-buttons">
+        <a href="quiz.html" class="arrow-button">
+            &#8592;
+        </a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="content">
+            <h1>Hard Level</h1>
+
+            <!-- Lives display -->
+            <div class="lives">
+                <span id="heart1" class="heart">&#10084;</span>
+                <span id="heart2" class="heart">&#10084;</span>
+            </div>
+
+            <!-- Quiz Questions -->
+            <div id="quiz">
+                <!-- Question 1 -->
+                <div class="question">1) Which article of the Indian Constitution provides the detailed procedure for the impeachment of the President?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Article 52</div>
+                <div class="option" onclick="checkAnswer(this, true)">B) Article 61</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) Article 72</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Article 74</div>
+
+                <!-- Question 2 -->
+                <div class="question">2) According to Article 76, who is responsible for advising the President on legal matters?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) The Chief Justice of India</div>
+                <div class="option" onclick="checkAnswer(this, true)">B) The Attorney General of India</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) The Vice-President</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) The Prime Minister</div>
+
+                <!-- Question 3 -->
+                <div class="question">3) In which article is the procedure for the dissolution of the Lok Sabha outlined?</div>
+                <div class="option" onclick="checkAnswer(this, true)">A) Article 83</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) Article 84</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) Article 89</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Article 110</div>
+
+                <!-- Question 4 -->
+                <div class="question">4) Which article mandates that the President must obtain the recommendation of the President for introducing financial bills in the Lok Sabha?</div>
+                <div class="option" onclick="checkAnswer(this, true)">A) Article 110</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) Article 123</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) Article 124</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Article 143</div>
+
+                <!-- Question 5 -->
+                <div class="question">5) Under Article 124-125, what is the maximum age till which a Supreme Court judge holds office?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) 60 years</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) 62 years</div>
+                <div class="option" onclick="checkAnswer(this, true)">C) 65 years</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) 68 years</div>
+
+                <!-- Question 6 -->
+                <div class="question">6) Which article gives the President the authority to seek the Supreme Court’s advisory opinion on any question of law or fact?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Article 123</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) Article 137</div>
+                <div class="option" onclick="checkAnswer(this, true)">C) Article 143</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Article 149</div>
+
+                <!-- Question 7 -->
+                <div class="question">7) What is the role of the Vice-President of India in the Rajya Sabha according to Articles 89-90?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) To appoint the Speaker of the Rajya Sabha</div>
+                <div class="option" onclick="checkAnswer(this, true)">B) To act as the ex-officio Chairman</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) To present financial bills</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) To conduct judicial reviews</div>
+
+                <!-- Question 8 -->
+                <div class="question">8) Which article provides for the President’s power to issue ordinances when Parliament is not in session?</div>
+                <div class="option" onclick="checkAnswer(this, true)">A) Article 123</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) Article 124</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) Article 130</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Article 141</div>
+
+                <!-- Question 9 -->
+                <div class="question">9) What does Article 129 empower the Supreme Court to do?</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Resolve disputes between states</div>
+                <div class="option" onclick="checkAnswer(this, false)">B) Appoint ad hoc judges</div>
+                <div class="option" onclick="checkAnswer(this, true)">C) Punish for contempt of court</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Review its own judgments</div>
+
+                <!-- Question 10 -->
+                <div class="question">10) Which article outlines the procedure for the conduct of business and duties of the Prime Minister with respect to the President?</div>
+                <div class="option" onclick="checkAnswer(this, true)">B) Article 77</div>
+                <div class="option" onclick="checkAnswer(this, false)">A) Article 74</div>
+                <div class="option" onclick="checkAnswer(this, false)">C) Article 80</div>
+                <div class="option" onclick="checkAnswer(this, false)">D) Article 89</div>
+            </div>
+        </div>
+    </div>
+
+  
+
+    <!-- Popup -->
+    <div id="popup">
+        <button onclick="closePopup('play.html')">Ok</button>
+    </div>
+
+    <script src="hard.js"></script>
+</body>
+</html>

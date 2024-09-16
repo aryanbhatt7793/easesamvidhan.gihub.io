@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter IV: The Union Judiciary
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset basic elements */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            height: 100%;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Background image */
+        body {
+            background-image: url('court.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        /* Content box */
+        .content {
+            width: 90%;
+            max-width: 1000px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Video container */
+        .video-container {
+            flex: 1;
+            max-width: 45%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* Text box */
+        .text-box {
+            flex: 1;
+            background-color: #1e88e5;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: left;
+        }
+
+        .text-box h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Backward arrow */
+        .arrow-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .arrow-button {
+            font-size: 4em;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Forward arrow */
+        .forward-arrow-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .forward-arrow-button {
+            font-size: 4em;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            width: 35px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hamburger-menu div {
+            background-color: white;
+            height: 4px;
+            width: 100%;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            iframe {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Backward Arrow -->
+    <div class="arrow-buttons">
+        <a href="president.html" class="arrow-button">
+            &#8592;
+        </a>
+    </div>
+
+    <!-- Forward Arrow -->
+    <div class="forward-arrow-buttons">
+        <a href="auditor.html" class="forward-arrow-button">
+            &#8594;
+        </a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="content">
+
+            <!-- Video Box -->
+            <div class="video-container">
+                <iframe width="908" height="511" src="https://www.youtube.com/embed/G_G2X3pfHwE" title="How Does The Indian Judiciary Work? | Class 8 - Civics | Learn With BYJU'S" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            <!-- Text Box -->
+            <div class="text-box">
+                
+                <h2>Chapter IV: The Union Judiciary
+                </h2>
+                <p>The Supreme Court is the highest court in India. It solves major issues, like disputes between states or
+                     between the government and states. It also hears appeals in big cases and can review its decisions.
+                </p>
+                <p>The Chief Justice leads the Supreme Court and can appoint extra judges when needed. The decisions made by the Supreme Court are final and must be followed by all courts in India. The President can also ask the Supreme Court for advice on difficult legal issues.
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <script>
+        // Hamburger Menu Toggle
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
